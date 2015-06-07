@@ -14,8 +14,7 @@ namespace FitIndia.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.AadhaarNo = "11";
-            string AadhaarNo = ViewBag.AadhaarNo;
+            string AadhaarNo = Session["aadhaarNo"] as String;
             DataContext dataContext = new DataContext();
             User user = dataContext.UserDetails.Single(x => x.AadhaarNo == AadhaarNo);
 

@@ -1,35 +1,35 @@
-﻿@model FitIndia.Models.AadhaarLogin
+﻿@model FitIndia.Models.AadhaarOtpAuth
 
 @{
-    ViewBag.Title = "Aadhaar Login";
+    ViewBag.Title = "Aadhaar OTP Authentication";
 }
 
-<h2>Create</h2>
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    
+
     <fieldset>
-        <legend>Aadhaar Login</legend>
+        <legend>Aadhaar OTP Authentication</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.AadhaarNo)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.AadhaarNo)
+            @Html.TextBoxFor(model => model.AadhaarNo, new { disabled = "disabled" })
             @Html.ValidationMessageFor(model => model.AadhaarNo)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Pincode)
+            @Html.LabelFor(model => model.Otp)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Pincode)
-            @Html.ValidationMessageFor(model => model.Pincode)
+            @Html.EditorFor(model => model.Otp)
+            @Html.ValidationMessageFor(model => model.Otp)
         </div>
 
         <p>
-            <input type="submit" value="Login" id="btnAjax" name="btnAjax" />
+            <input type="submit" value="Authenticate" />
         </p>
     </fieldset>
 }
@@ -37,6 +37,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
