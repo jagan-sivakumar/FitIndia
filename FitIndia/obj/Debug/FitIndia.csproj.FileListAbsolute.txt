@@ -23,3 +23,35 @@ c:\users\jagan\documents\visual studio 2013\Projects\FitIndia\FitIndia\bin\Syste
 c:\users\jagan\documents\visual studio 2013\Projects\FitIndia\FitIndia\bin\System.Web.WebPages.Razor.xml
 c:\users\jagan\documents\visual studio 2013\Projects\FitIndia\FitIndia\obj\Debug\FitIndia.dll
 c:\users\jagan\documents\visual studio 2013\Projects\FitIndia\FitIndia\obj\Debug\FitIndia.pdb
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\FitIndia.dll.config
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\FitIndia.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\FitIndia.pdb
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\Antlr3.Runtime.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\EntityFramework.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\Newtonsoft.Json.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Net.Http.Formatting.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Http.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Http.WebHost.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Mvc.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Optimization.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Providers.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Razor.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.WebPages.Deployment.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.WebPages.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.WebPages.Razor.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\WebGrease.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\EntityFramework.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\Newtonsoft.Json.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Net.Http.Formatting.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Http.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Http.WebHost.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Mvc.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.Razor.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.WebPages.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.WebPages.Deployment.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\bin\System.Web.WebPages.Razor.xml
+C:\Users\S ARUNA\FitIndia\FitIndia\obj\Debug\FitIndia.csprojResolveAssemblyReference.cache
+C:\Users\S ARUNA\FitIndia\FitIndia\obj\Debug\FitIndia.dll
+C:\Users\S ARUNA\FitIndia\FitIndia\obj\Debug\FitIndia.pdb
