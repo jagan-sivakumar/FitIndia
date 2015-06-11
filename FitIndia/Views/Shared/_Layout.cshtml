@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <div class="header">
-        <div class="main">
-            <h1>FIT INDIA - MEDICAL REPORTING AND CLAIMS MADE EASY</h1>
-        </div>
-    </div>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("head", required: false)
 </head>
 <body>
-    
+    <div class="header">
+        <div class="main">
+            <span>FIT INDIA - Medical Reporting And Claims Made Easy</span>
+        </div>
+    </div>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")

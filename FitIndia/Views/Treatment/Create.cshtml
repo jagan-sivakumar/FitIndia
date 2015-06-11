@@ -1,0 +1,94 @@
+﻿@model FitIndia.Models.TreatmentReport
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/table.css" rel="stylesheet" type="text/css" />
+<ul id="menuNav">
+    <li>
+        @Html.ActionLink("Home", "Index")
+    </li>
+    <li>
+        @Html.ActionLink("Profile", "Index", "User")
+    </li>
+    <li>
+        @Html.ActionLink("Add Report", "Create", null, new { @class = "active" })
+    </li>
+    <li>
+        @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "navRight" })
+    </li>
+</ul>
+<table align="center" style="width:450px;">
+    <tr>
+        <td>
+            <div class="container">
+                <div class="form-legend">
+                    <span>New Treatment Report</span>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AadhaarNo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.AadhaarNo, new { disabled = "disabled" })
+                            @Html.ValidationMessageFor(model => model.AadhaarNo)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.DateOfTreatment)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.DateOfTreatment)
+                            @Html.ValidationMessageFor(model => model.DateOfTreatment)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.TreatingOrganization)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.TreatingOrganization)
+                            @Html.ValidationMessageFor(model => model.TreatingOrganization)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.DoctorName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.DoctorName)
+                            @Html.ValidationMessageFor(model => model.DoctorName)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.MedicalCondition)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.MedicalCondition)
+                            @Html.ValidationMessageFor(model => model.MedicalCondition)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.TreatmentGiven)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.TreatmentGiven)
+                            @Html.ValidationMessageFor(model => model.TreatmentGiven)
+                        </div>
+
+                        <p>
+                            <input type="submit" value="Create" class="btn" />
+                        </p>
+                    </fieldset>
+                }
+            </div>
+        </td>
+    </tr>
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

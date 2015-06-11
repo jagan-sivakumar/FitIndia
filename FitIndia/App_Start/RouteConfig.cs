@@ -16,7 +16,7 @@ namespace FitIndia
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "AadhaarLogin", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "AadhaarLogin", action = "Create", id = UrlParameter.Optional }
             );
         }
     }

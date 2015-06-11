@@ -3,7 +3,20 @@
 @{
     ViewBag.Title = "User Profile";
 }
-
+<ul id="menuNav">
+    <li>
+        @Html.ActionLink("Home", "Index", "Treatment")
+    </li>
+    <li>
+        @Html.ActionLink("Profile", "Index", "User")
+    </li>
+    <li>
+        @Html.ActionLink("Add Report", "Create","Treatment")
+    </li>
+    <li>
+        @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "navRight" })
+    </li>
+</ul>
 
 <fieldset>
     <legend>User Profile</legend>

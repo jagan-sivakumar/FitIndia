@@ -1,0 +1,75 @@
+﻿table.table-responsive {
+    width: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+    border-collapse: collapse;
+    font-size: 1em;
+    color: #222;
+}
+
+table.table-responsive * {
+    text-align: left;
+}
+
+
+table.table-responsive th {
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+table.table-responsive td {
+    padding: 0.5em;
+    font-size: 0.9em;
+}
+
+
+table.table-responsive tr {
+    border-bottom: 1px solid;
+}
+
+@media screen and (max-width: 960px) {
+
+        table.table-responsive {
+        display: block;
+        width: 100%;
+        }
+        table.table-responsive thead {
+            display: none;
+        }
+
+        table.table-responsive tbody {
+            display: block;
+            width: 100%;
+        }
+
+        table.table-responsive td:last-child {
+            padding-right: 0;
+            border-bottom: 2px solid;
+        }
+
+        table.table-responsive tr, table.table-responsive th, table.table-responsive td {
+            display: block;
+            padding: 0;
+        }
+
+        table.table-responsive td[data-title]:before {
+            font-weight: bold;
+            display: inline-block;
+            content: attr(data-title);
+            float: left;
+        }
+
+        table.table-responsive tr {
+            border-bottom: none;
+            padding: 0.5em 0;
+        }
+
+        table.table-responsive td {
+            padding: 0.25em 0;
+            border-bottom: 1px dotted;
+            text-align: right;
+        }
+
+        table.table-responsive td:empty {
+            display: none;
+        }
+}
