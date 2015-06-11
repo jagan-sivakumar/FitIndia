@@ -10,5 +10,6 @@ namespace FitIndia.Models
     {
         public DbSet<User> UserDetails { get; set; }
         public DbSet<TreatmentReport> TreatmentReports { get; set; }
+        public DbSet<BillReport> BillReports { get; set; }
     }
 }

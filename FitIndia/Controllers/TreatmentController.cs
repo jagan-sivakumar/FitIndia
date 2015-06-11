@@ -15,15 +15,33 @@ namespace FitIndia.Controllers
         public ActionResult Index()
         {
             string aadhaarNo = Session["aadhaarNo"] as String;
-            DataContext dataContext = new DataContext();
-            List<TreatmentReport> treatmentReports = dataContext.TreatmentReports.Where(x => x.AadhaarNo == aadhaarNo).ToList();
-            return View(treatmentReports);
+            if(aadhaarNo!=null)
+            {
+                DataContext dataContext = new DataContext();
+                List<TreatmentReport> treatmentReports = dataContext.TreatmentReports.Where(x => x.AadhaarNo == aadhaarNo).ToList();
+                return View(treatmentReports);
+            }
+            else
+            {
+                return RedirectToAction("Create", "AadhaarLogin");
+            }
         }
         [HttpGet]
         [ActionName("Create")]
         public ActionResult Create_Get()
         {
-            return View();
+            string aadhaarNo = Session["aadhaarNo"] as String;
+            if (aadhaarNo != null)
+            {
+                TreatmentReport treatmentReport = new TreatmentReport();
+                treatmentReport.AadhaarNo = aadhaarNo;
+                treatmentReport.DateOfTreatment = DateTime.Now;
+                return View(treatmentReport);
+            }
+            else
+            {
+                return RedirectToAction("Create", "AadhaarLogin");
+            }
         }
 
         [HttpPost]
@@ -32,6 +50,8 @@ namespace FitIndia.Controllers
         {
             TreatmentReport treatmentReport = new TreatmentReport();
             TryUpdateModel(treatmentReport);
+            string aadhaarNo = Session["aadhaarNo"] as String;
+            treatmentReport.AadhaarNo = aadhaarNo;
             if (ModelState.IsValid)
             {
                 BusinessLayer businessLayer = new BusinessLayer();

@@ -3,44 +3,52 @@
 @{
     ViewBag.Title = "Aadhaar Login";
 }
+<div class="no-menu">
+</div>
+<table align="center" class="login-table">
+    <tr>
+        <td>
+            <div class="container">
+                <div class="form-legend">
+                    <span>Aadhaar Login</span>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
 
-       <div class="container">
-              <section id="content">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                @Html.ValidationSummary(true)
+                    <fieldset>
 
-                <fieldset>
-                    <legend>Aadhaar Login</legend>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AadhaarNo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.AadhaarNo)
+                            @Html.ValidationMessageFor(model => model.AadhaarNo)
+                        </div>
 
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.AadhaarNo)
-                    </div>
-                    <div class="editor-field field">
-                        @Html.EditorFor(model => model.AadhaarNo)
-                        @Html.ValidationMessageFor(model => model.AadhaarNo)
-                    </div>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Pincode)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Pincode)
+                            @Html.ValidationMessageFor(model => model.Pincode)
+                        </div>
 
-                    <div class="editor-label">
-                        @Html.LabelFor(model => model.Pincode)
-                    </div>
-                    <div class="editor-field field">
-                        @Html.EditorFor(model => model.Pincode)
-                        @Html.ValidationMessageFor(model => model.Pincode)
-                    </div>
-
-                    <p>
-                        <input type="submit" value="Login" id="btnAjax" name="btnAjax" />
-                    </p>
-                </fieldset>
-            }
-                  </section>
-           </div>
-
-            <div>
-                @Html.ActionLink("Back to List", "Index")
+                        <p>
+                            <input type="submit" value="Login" class="btn" />
+                        </p>
+                    </fieldset>
+                }
             </div>
-            @section Scripts {
-                @Scripts.Render("~/bundles/jqueryval")
-            }
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

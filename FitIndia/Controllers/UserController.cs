@@ -9,16 +9,21 @@ namespace FitIndia.Controllers
 {
     public class UserController : Controller
     {
-        //
         // GET: /User/
 
         public ActionResult Index()
         {
             string AadhaarNo = Session["aadhaarNo"] as String;
-            DataContext dataContext = new DataContext();
-            User user = dataContext.UserDetails.Single(x => x.AadhaarNo == AadhaarNo);
-
-            return View(user);
+            if (AadhaarNo != null)
+            {
+                DataContext dataContext = new DataContext();
+                User user = dataContext.UserDetails.Single(x => x.AadhaarNo == AadhaarNo);
+                return View(user);
+            }
+            else
+            {
+                return RedirectToAction("Create", "AadhaarLogin");
+            }      
         }
 
     }

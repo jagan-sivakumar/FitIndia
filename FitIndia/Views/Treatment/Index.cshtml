@@ -3,15 +3,26 @@
 @{
     ViewBag.Title = "Treatment Report";
 }
-
+<link href="~/Content/table.css" rel="stylesheet" type="text/css"/>
+<ul id="menuNav">
+    <li>
+        @Html.ActionLink("Home", "Index", null, new { @class="active"})
+    </li>
+    <li>
+        @Html.ActionLink("Profile", "Index", "User")
+    </li>
+    <li>
+        @Html.ActionLink("Add Report", "Create")
+    </li>
+    <li>
+        @Html.ActionLink("Logout", "Logout", "Account", null, new { @class = "navRight" })
+    </li>
+</ul>
 <h2>Treatment Report</h2>
 
-<p>
-    @Html.ActionLink("Add Report", "Create")
-</p>
-@if(Model.Count()==0)
+@if (Model.Count() == 0)
 {
-    <table>
+    <table class="table-responsive">
         <tr>
             <td>
                 No Record Found
@@ -21,56 +32,53 @@
 }
 else
 {
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AadhaarNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateOfTreatment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TreatingOrganization)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DoctorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedicalCondition)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TreatmentGiven)
-        </th>
-        <th></th>
-    </tr>
+    <table class="table-responsive">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfTreatment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TreatingOrganization)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DoctorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MedicalCondition)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TreatmentGiven)
+                </th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td data-title="@Html.DisplayNameFor(model => model.DateOfTreatment)">
+                        @Html.DisplayFor(modelItem => item.DateOfTreatment)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.TreatingOrganization)">
+                        @Html.DisplayFor(modelItem => item.TreatingOrganization)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.DoctorName)">
+                        @Html.DisplayFor(modelItem => item.DoctorName)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.MedicalCondition)">
+                        @Html.DisplayFor(modelItem => item.MedicalCondition)
+                    </td>
+                    <td data-title="@Html.DisplayNameFor(model => model.TreatmentGiven)">
+                        @Html.DisplayFor(modelItem => item.TreatmentGiven)
+                    </td>
+                    <td data-title="Operation">
+                        @Html.ActionLink("Update Bill", "Index", "Bill", new { id = item.ReportID }, null) |
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AadhaarNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfTreatment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TreatingOrganization)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DoctorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedicalCondition)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TreatmentGiven)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
-
-</table>
+                        @Html.ActionLink("Claim Bill", "Index", "Claim", new { id = item.ReportID }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

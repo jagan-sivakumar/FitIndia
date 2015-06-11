@@ -4,39 +4,47 @@
     ViewBag.Title = "Aadhaar OTP Authentication";
 }
 
-
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Aadhaar OTP Authentication</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AadhaarNo)
-        </div>
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.AadhaarNo, new { disabled = "disabled" })
-            @Html.ValidationMessageFor(model => model.AadhaarNo)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Otp)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Otp)
-            @Html.ValidationMessageFor(model => model.Otp)
-        </div>
-
-        <p>
-            <input type="submit" value="Authenticate" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="no-menu">
 </div>
+<table align="center" class="login-table">
+    <tr>
+        <td>
+            <div class="container">
+                <div class="form-legend">
+                    <span>Aadhaar OTP Authentication</span>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.AadhaarNo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.AadhaarNo, new { disabled = "disabled" })
+                            @Html.ValidationMessageFor(model => model.AadhaarNo)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Otp)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Otp)
+                            @Html.ValidationMessageFor(model => model.Otp)
+                        </div>
+
+                        <p>
+                            <input type="submit" value="Authenticate" class="btn" />
+                        </p>
+                    </fieldset>
+                }
+            </div>
+        </td>
+    </tr>
+</table>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
